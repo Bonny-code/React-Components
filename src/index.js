@@ -1,8 +1,9 @@
 //Functional Components in React
-/*
+
 import React from "react";
 import ReactDOM from "react-dom";
 
+/*
 const Greetings = (props) => {
   return (
     <div>
@@ -71,24 +72,32 @@ setInterval(() => {
 */
 
 class App extends React.Component {
-     constructor(props) {
-       super(props)
-       this.state = {
-         counter = 1
-       }
-       setInterval( () => {
-         this.setState({counter: this.state.counter + 1})
-       }, 1000)
-     }
+  constructor() {
+    super();
+    this.state = {
+      counter: 1,
+    };
+  }
 
- render() {
-   return (
-     <div>{this.state.counter}</div>
-   )
- }
+  render() {
+    return (
+      <div>
+        <div>{this.state.counter}</div>
+        <div>
+          <button
+            onClick={() => this.setState({ counter: this.state.counter + 1 })}
+          >
+            plus
+          </button>
+          <button
+            onClick={() => this.setState({ counter: this.state.counter - 1 })}
+          >
+            minus
+          </button>
+        </div>
+      </div>
+    );
+  }
 }
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-)
+ReactDOM.render(<App />, document.getElementById("root"));
