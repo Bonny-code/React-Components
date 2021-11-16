@@ -63,17 +63,19 @@ const App = () => {
 ReactDOM.render(<App />, document.getElementById("root"));
 
 */
-const arto = {
-  nimi: "Arto Hellas",
-  ika: 35,
-  koulutus: "Filosofian tohtori",
-  tervehdi: function () {
+
+class Henkilo {
+  constructor(nimi, ika) {
+    this.nimi = nimi;
+    this.ika = ika;
+  }
+  tervehdi() {
     console.log("hello, my name is", this.nimi);
-  },
-};
+  }
+}
 
-arto.vanhene = function () {
-  this.ika += 1;
-};
+const arto = new Henkilo("Arto Hellas", 35);
+arto.tervehdi();
 
-console.log(arto.ika);
+const jami = new Henkilo("Jami Kousa", 21);
+jami.tervehdi();
