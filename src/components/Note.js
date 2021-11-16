@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 
 const Note = ({ note, toggleImportance }) => {
   const label = note.important ? "make not important" : "make important";
@@ -10,4 +10,5 @@ const Note = ({ note, toggleImportance }) => {
     </li>
   );
 };
+
 export default Note;
